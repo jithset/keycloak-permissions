@@ -9,24 +9,24 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.jitihn.model.Product;
-import com.jitihn.service.ProductService;
+import com.jitihn.model.Company;
+import com.jitihn.service.CompanyService;
 
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/apis/product")
-public class ProductResource {
+@Path("/apis/company")
+public class CompanyResource {
 
     @Inject
-    ProductService productService;
+    CompanyService companyService;
 
     @GET
-    public Response getProduct() {
-        return Response.status(Status.OK).entity(productService.getProduct()).build();
+    public Response get() {
+        return Response.status(Status.OK).entity(companyService.getCompanies()).build();
     }
 
     @POST
-    public Response add(Product product) {
-        productService.saveProduct(product);
+    public Response add(Company company) {
+        companyService.saveCompany(company);
         return Response.status(Status.CREATED).entity(true).build();
     }
 }
