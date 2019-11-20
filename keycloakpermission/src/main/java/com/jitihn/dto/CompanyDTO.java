@@ -1,8 +1,6 @@
 package com.jitihn.dto;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import com.jitihn.model.Company;
 
 public class CompanyDTO {
