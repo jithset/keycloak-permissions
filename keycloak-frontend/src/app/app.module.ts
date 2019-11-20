@@ -4,8 +4,14 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { TestComponent } from './components/test/test.component';
 import { AuthGuard } from './auth.guard';
+import { AuthService } from './service/auth.service';
+import { CompanyComponent } from './components/company/company.component';
+import { HomeComponent } from './components/home/home.component';
+import { CreateCompanyComponent } from './components/company/create-company/create-company.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const keycloakService = new KeycloakService();
 
@@ -13,13 +19,20 @@ const keycloakService = new KeycloakService();
 
   declarations: [
     AppComponent,
-    TestComponent
+    CompanyComponent,
+    HomeComponent,
+    CreateCompanyComponent,
+    PageNotFoundComponent,
+    NavbarComponent
   ],
   imports: [KeycloakAngularModule,
     BrowserModule,
-    AppRoutingModule],
+    AppRoutingModule,
+    HttpClientModule
+  ],
   providers: [
     AuthGuard,
+    AuthService,
     {
       provide: KeycloakService,
       useValue: keycloakService
@@ -39,7 +52,7 @@ export class AppModule implements DoBootstrap {
           checkLoginIframe: false
         },
         enableBearerInterceptor: true,
-        bearerExcludedUrls: ['/profile', '/clients/public']
+        bearerExcludedUrls: ['/home', '/clients/public']
       });
       app.bootstrap(AppComponent);
     } catch (error) {
