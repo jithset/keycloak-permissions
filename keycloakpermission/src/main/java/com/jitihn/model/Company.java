@@ -11,6 +11,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Cacheable
 public class Company extends PanacheEntity {
     private String pid;
+    private String adminid;
     private String name;
     private String description;
     private String address;
@@ -63,6 +64,14 @@ public class Company extends PanacheEntity {
 
     public void setUpdatedDateTime(LocalDateTime updatedDateTime) {
         this.updatedDateTime = updatedDateTime;
+    }
+
+    public String getAdminid() {
+        return adminid;
+    }
+
+    public void setAdminid(String adminid) {
+        this.adminid = adminid;
     }
 
 }

@@ -5,6 +5,7 @@ export class UserData {
     username: string;
     enabled: boolean;
     email: string;
+    groups: string[];
     credentials: PasswordData[];
     attributes: Attributes
 }

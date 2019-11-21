@@ -5,6 +5,7 @@ import com.jitihn.model.Company;
 
 public class CompanyDTO {
     private String pid;
+    private String adminid;
     private String name;
     private String description;
     private String address;
@@ -12,7 +13,8 @@ public class CompanyDTO {
     private LocalDateTime updatedDateTime;
 
     public CompanyDTO(Company company) {
-        this.pid = company.getName();
+        this.pid = company.getPid();
+        this.adminid = company.getAdminid();
         this.name = company.getName();
         this.description = company.getDescription();
         this.address = company.getAddress();
@@ -72,6 +74,14 @@ public class CompanyDTO {
 
     public void setUpdatedDateTime(LocalDateTime updatedDateTime) {
         this.updatedDateTime = updatedDateTime;
+    }
+
+    public String getAdminid() {
+        return adminid;
+    }
+
+    public void setAdminid(String adminid) {
+        this.adminid = adminid;
     }
 
 }

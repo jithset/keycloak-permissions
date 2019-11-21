@@ -1,1 +1,5 @@
-<p>company works!</p>
+<div *ngFor="let item of companyList" class="card mt-2 p-2">
+    <h3 class="text-muted">{{item.name}}</h3>
+    <p>{{item.description}}</p>
+    <p>{{item.address}}</p>
+</div>

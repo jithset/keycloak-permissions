@@ -12,6 +12,7 @@ import { CreateCompanyComponent } from './components/company/create-company/crea
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const keycloakService = new KeycloakService();
 
@@ -25,10 +26,13 @@ const keycloakService = new KeycloakService();
     PageNotFoundComponent,
     NavbarComponent
   ],
-  imports: [KeycloakAngularModule,
+  imports: [
+    KeycloakAngularModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     AuthGuard,
