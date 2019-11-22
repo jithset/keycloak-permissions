@@ -1,0 +1,121 @@
+{
+  "allowRemoteResourceManagement": true,
+  "policyEnforcementMode": "ENFORCING",
+  "resources": [
+    {
+      "name": "ProductResource",
+      "ownerManagedAccess": false,
+      "displayName": "productr resource",
+      "attributes": {},
+      "_id": "b92bbc21-c887-4ba3-8ee0-7e1f1975f1fd",
+      "uris": [
+        "/apis/product/*"
+      ],
+      "scopes": [
+        {
+          "name": "view"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "ca51153d-c46d-456c-b65c-fc8e1b44ec16",
+      "name": "AdminOnlyPolicy",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"admin\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "aa8b8a8e-9bcc-4a31-b4fb-2af61ab1c48c",
+      "name": "PremeiumUserOnlyPolicy",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"premium_user\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "6f188635-522e-415c-9d79-d350c25d1e5e",
+      "name": "UserOnlyPolicy",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"user\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "89df2afc-5775-4306-bcb4-cbcdf96ff0e0",
+      "name": "AllAccessPolicy",
+      "type": "aggregate",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "applyPolicies": "[\"UserOnlyPolicy\",\"PremeiumUserOnlyPolicy\",\"AdminOnlyPolicy\"]"
+      }
+    },
+    {
+      "id": "5928289d-92d6-4a23-b996-db32828f99f4",
+      "name": "CreateProduct",
+      "description": "admin can only create product",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"ProductResource\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"AdminOnlyPolicy\"]"
+      }
+    },
+    {
+      "id": "956fb0c0-354f-4e8d-86f8-3602cf22cd84",
+      "name": "DeleteProduct",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"ProductResource\"]",
+        "scopes": "[\"delete\"]",
+        "applyPolicies": "[\"AdminOnlyPolicy\"]"
+      }
+    },
+    {
+      "id": "9152b60d-df38-4b88-8154-cc725f8cc395",
+      "name": "ViewProduct",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"ProductResource\"]",
+        "scopes": "[\"view\"]",
+        "applyPolicies": "[\"AllAccessPolicy\"]"
+      }
+    }
+  ],
+  "scopes": [
+    {
+      "id": "12f9e4c4-be52-492f-b883-6d552dc0bd3b",
+      "name": "view"
+    },
+    {
+      "id": "c531767d-988d-4a5a-a21c-4238e49f44a9",
+      "name": "delete"
+    },
+    {
+      "id": "3f256a3e-2619-41e9-b615-da895fe761c5",
+      "name": "create"
+    }
+  ],
+  "decisionStrategy": "UNANIMOUS"
+}
