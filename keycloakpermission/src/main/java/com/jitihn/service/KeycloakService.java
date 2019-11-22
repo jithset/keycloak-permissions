@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 import com.jitihn.model.Account;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-@Path("/keycloak-permission")
+@Path("/permission-test")
 @RegisterRestClient
 public interface KeycloakService {
 
