@@ -1,0 +1,190 @@
+{
+	"variables": [],
+	"info": {
+		"name": "keycloak",
+		"_postman_id": "25c376d6-bc44-6dc3-c7bd-bb6337e56f98",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "gettoken",
+			"request": {
+				"url": "http://localhost:8181/auth/realms/microservicedb/protocol/openid-connect/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "jithin",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "jithin",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "angular-frontend",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "admin-getusers",
+			"request": {
+				"url": "http://localhost:8180/auth/admin/realms/microservicedb/users/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJTUllzVTJxRUc0WkhFM2hRSUxfN08wNEtNTWdZUENpME00dHNNbGU3dlBJIn0.eyJqdGkiOiJiMDM1NGIzOC0xMDRlLTQwNTQtYmM1YS01MmYzZTNlYzAzNWQiLCJleHAiOjE1NzI2MTA5MDYsIm5iZiI6MCwiaWF0IjoxNTcyNjEwNjA2LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODAvYXV0aC9yZWFsbXMvbWljcm9zZXJ2aWNlZGIiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiMDQ4NDRiNDAtNzk5YS00NmQ2LTk2ZWYtZWEwMDc0OTI2ZTM0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5ndWxhci1mcm9udGVuZCIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6IjRhZGY0YmM4LTM2MTYtNDQ5Yi04YTAxLWVmNmEzYTY3YzBkNiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIiwiZW1wbG95ZWUiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbIm1hbmFnZS11c2VycyIsInZpZXctdXNlcnMiLCJxdWVyeS1ncm91cHMiLCJxdWVyeS11c2VycyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiaml0aGluIHMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJqaXRoaW4iLCJnaXZlbl9uYW1lIjoiaml0aGluIiwiZmFtaWx5X25hbWUiOiJzIiwiZW1haWwiOiJqaXRoaW5AZ21haWwuY29tIn0.ZjgWIEaaFESfMsIDdC0xYVGc7K8qUobEE9BQg6qotz7j8lPYxINBV74-H5e-F-0VIJgtTH4tW8jOmKqude2qTZ69Bix7xzZDo9zHOOjkuWXxm2ooKW9VsvwrQsXSWb6vM7ZTqQBeOYC8PrbkE996Q0OWgvWUT5LsRhP238eOHp31_WgLBSlIXAJ3CNnHIAfroOomzOwJAzpGpKYd7gzDxoimRVS2PCiatKC7xmUkqZ_RhmHpxlEXcNMHuxgqH8I5a4PQgwwlqVPHUwy3TLsHR1qC2DP7Qw_WGWcUvV-tgB8uMvnYR_QN3Vtj8l3DTfseF-XzUz-ejctYnSTe6impcA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get user with id",
+			"request": {
+				"url": "http://localhost:8180/auth/admin/realms/microservicedb/users",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJTUllzVTJxRUc0WkhFM2hRSUxfN08wNEtNTWdZUENpME00dHNNbGU3dlBJIn0.eyJqdGkiOiI1OWY2MTExZC0wNWE1LTRhMjktYjE4Zi05OTZmYTdjMWUzOTgiLCJleHAiOjE1NzI2MDQ3MjAsIm5iZiI6MCwiaWF0IjoxNTcyNjA0NDIwLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODAvYXV0aC9yZWFsbXMvbWljcm9zZXJ2aWNlZGIiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiMDQ4NDRiNDAtNzk5YS00NmQ2LTk2ZWYtZWEwMDc0OTI2ZTM0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYW5ndWxhci1mcm9udGVuZCIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6ImUxODliZmU3LWQ0ODgtNGE1Yy1iMTA3LTRkNjg5YTdlMWJjNCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIiwiZW1wbG95ZWUiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbIm1hbmFnZS11c2VycyIsInZpZXctdXNlcnMiLCJxdWVyeS1ncm91cHMiLCJxdWVyeS11c2VycyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiaml0aGluIHMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJqaXRoaW4iLCJnaXZlbl9uYW1lIjoiaml0aGluIiwiZmFtaWx5X25hbWUiOiJzIiwiZW1haWwiOiJqaXRoaW5AZ21haWwuY29tIn0.bUViroRe3mK1DLhs3f8uKJ77NJy2qVAAptpZbH-ppG9-0HelK7HH_HqWv9WRnc9f_r8pSDAISuwF1Pix_u5G_tyJAMDtN07kxkji_kBLSiq8fuEkB9CrSmTEdiqQ5pEdMTilkufv0pNBdvblvJUjApxLbX89uE_Ft_Lc-ZClHEjcjxPwruZWJ81pWJnlRI730GYBKp6ZhVpyjNLafmbKC-EwiQf4j7ypIS9AgZG6RhRDI4yDqbQKGThHapwqIAZV-KpFUErhU6iY4VQSEHte31t-rTUMhmHcXhsPG-bKfsl9KHMHmjuHrs9En0Idii9and2m4NnNz8xUncJ5QjPOWQ",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"url": "http://localhost:8180/auth/admin/realms/microservice-test/users/9c8156ee-738c-40bf-9b72-bc94c3649338",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1c1FaNktVclZtenMyTExkXzJ4UjhCZHVBZVFjdGRINDFwTU5QY2g3b004In0.eyJqdGkiOiJjYzdmMDAyZS05MmMzLTQxYjItODcxNC0yZThiZGMxODIwNjgiLCJleHAiOjE1NzI0MTU0NTEsIm5iZiI6MCwiaWF0IjoxNTcyNDE1MTUxLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODAvYXV0aC9yZWFsbXMvbWljcm9zZXJ2aWNlLXRlc3QiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiOWM4MTU2ZWUtNzM4Yy00MGJmLTliNzItYmM5NGMzNjQ5MzM4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNlYmFja2VuZCIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6ImI2YzkwZjYzLWVhODUtNGRhNS1iMGU5LTgyNTg3MjJiMmFjYyIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIiwiZW1wbG95ZWUiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbIm1hbmFnZS11c2VycyIsInZpZXctdXNlcnMiLCJxdWVyeS1ncm91cHMiLCJxdWVyeS11c2VycyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiaml0aGluIHMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJqaXRoaW4iLCJnaXZlbl9uYW1lIjoiaml0aGluIiwiZmFtaWx5X25hbWUiOiJzIiwiZW1haWwiOiJqaXRpaG5zQGdtYWlsLmNvbSJ9.A3z0a44oOWZDT0zRmshkBxMtS6r-eerDKmejpy-bVlQtthXWwRpzPtKtOPeAn3JJWuuI8RI9P1jm5Vpnb2WDhrN7hGxKAxupZtYYDo6SUep-MCg9jW6B_Z-CiYLLmgbvch_FlAdmWMiq_ha1EuR-j8zpxGIN-gqMhtTTbAzNAlI7eB5ha9g041D4Gf3iPjyXIfK56YTzB3jrZUjQDOTAM7S5R0qZrwdumNOazMDgzVcm4h17tcb2Ej2JlaJNYp2Z2f0-gOJWdaW_TFkJ4tWfjR_MyW49LEJYI3gK2EmepBGmkML9FWr8c17y6gaSedh6ynr1hShJMPc_j7V1jd8vpg",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"jithin new\",\n\t\"attributes\": {\n\t\t\"avatar_url\": \"http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/04/0446f43706eacd2bbfdf0597106a02344b5accb0_full.jpg\",\n\t\t\"mobile_number\": \"8129471760\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "reset password",
+			"request": {
+				"url": "http://localhost:8180/auth/admin/realms/microservice-test/users/9c8156ee-738c-40bf-9b72-bc94c3649338/reset-password",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1c1FaNktVclZtenMyTExkXzJ4UjhCZHVBZVFjdGRINDFwTU5QY2g3b004In0.eyJqdGkiOiJkYjIzZWQ2Ni02OTVmLTQ1M2MtOTUxMS1iNDkzNjQxYWQ2NTMiLCJleHAiOjE1NzI1MjQwNzksIm5iZiI6MCwiaWF0IjoxNTcyNTIzNzc5LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODAvYXV0aC9yZWFsbXMvbWljcm9zZXJ2aWNlLXRlc3QiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiOWM4MTU2ZWUtNzM4Yy00MGJmLTliNzItYmM5NGMzNjQ5MzM4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNlYmFja2VuZCIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6ImU1Y2FlNDExLTYzYzctNGNiNS1iZjQ3LWMxMDRjYThkYWQ1MCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIiwiZW1wbG95ZWUiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbIm1hbmFnZS11c2VycyIsInZpZXctdXNlcnMiLCJxdWVyeS1ncm91cHMiLCJxdWVyeS11c2VycyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoidGVzdCBkYXRhIHMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJqaXRoaW4iLCJnaXZlbl9uYW1lIjoidGVzdCBkYXRhIiwiZmFtaWx5X25hbWUiOiJzIiwiZW1haWwiOiJqaXRoaW51cEBnbWFpbC5jb20ifQ.BXqqZmu0weGUAvZK3epB8rFN0el6sgd6TW5MnpGWNbTVwyNTA42Zus4TExh0lraN2eTkVftdenueWFAgxh3UYG-J5B-aOd9FhtozoWeSqW6ew5QAMyLWYT8UB2dMQFOHG0S1KHoj-H2XjaoPgtSUvZF38VAb94D7qjGWNgCkeynf1S-uVZtCcWZQ_uFE4OG5mMwoEWJGL4cl344FQ_x1lXRUTGnzzJrGdykirnngh654UlEWEM_bXNHG169vUEo0-6P46akLiNTujTm_kBzQhYs0df1v8GjD4cnLQ7tTvkek4hNRm4IyQNGI0j2fOHLDnNt_YkL3p3osGjGDzJbNMQ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type\":\"password\",\n\t\"value\": \"jithinnew\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "reset pass",
+			"request": {
+				"url": "http://localhost:8180/auth/admin/realms/microservice-test/users/9c8156ee-738c-40bf-9b72-bc94c3649338/execute-actions-email",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1c1FaNktVclZtenMyTExkXzJ4UjhCZHVBZVFjdGRINDFwTU5QY2g3b004In0.eyJqdGkiOiJjNmYzYjYyNy0zNGI4LTRkZGItYWE2MC1lOTk4NzdhMjA0Y2EiLCJleHAiOjE1NzI1MjU4NjgsIm5iZiI6MCwiaWF0IjoxNTcyNTI1NTY4LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODAvYXV0aC9yZWFsbXMvbWljcm9zZXJ2aWNlLXRlc3QiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiOWM4MTU2ZWUtNzM4Yy00MGJmLTliNzItYmM5NGMzNjQ5MzM4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNlYmFja2VuZCIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6IjFlNGMxMzAwLTA1MDktNGZiYi05M2ViLWZjNWU1OGJiMWQ5MiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIiwiZW1wbG95ZWUiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbIm1hbmFnZS11c2VycyIsInZpZXctdXNlcnMiLCJxdWVyeS1ncm91cHMiLCJxdWVyeS11c2VycyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoidGVzdCBkYXRhIHMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJqaXRoaW4iLCJnaXZlbl9uYW1lIjoidGVzdCBkYXRhIiwiZmFtaWx5X25hbWUiOiJzIiwiZW1haWwiOiJqaXRoaW51cEBnbWFpbC5jb20ifQ.d8dwLP-McBNnjJbNiHsDZ1KUl4GEU0Sb-2CKXCFUPjbTZP2RF8XgUwgp1d9FKdJLKnqB-jTfDukWd39Qp7Yc3sE2zrLY8nllsrV9YZ6P-aREyBrcP6t_ItPLBbzHHQ7DhB06vyxQwSAP0f3WvMMybGQYVJSatSGfJCjXoFF491Lk_wTjMshBWkWs_4XK1rpPg0_Ez9uiNaSLL4uG4vG0_1NYntfaEL50wgzAXk5fIO_WBAB2C5DJCXQFmTbj710xkOyYXfGETkI76mbyGPMnw1B6s_YFtjwN_JBk_PUsTvshMVDdvITQ_OCcHhX1wVTbYnypbm7DNdKt6JYrHHI5gQ",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"actions\": [\"UPDATE_PASSWORD\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create employee",
+			"request": {
+				"url": "http://localhost:8181/auth/admin/realms/test-realm/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSQlNkbzZqUS1NQVJGb3drbU80OG5VeDY4eVA4Q0NBMHloTmhCdWNwbEhRIn0.eyJqdGkiOiI0Yzc1ZDRhNi02NmMwLTQwMWEtOGYzNy05MmEyNzg4OWRjMjYiLCJleHAiOjE1NzQ1MDE0MTYsIm5iZiI6MCwiaWF0IjoxNTc0NTAxMTE2LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODEvYXV0aC9yZWFsbXMvdGVzdC1yZWFsbSIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiIwMDAwZjM0MC1jOTE3LTQ4ZjYtOGFlNC1jOTY0MDkxNDMyNTMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJiYWNrZW5kc2VydmljZSIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6IjNmMGY4YTllLTJhNDctNDEyZi05NzNiLTYwMWY3MjVmOWQwNyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDg1Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWppdGgifQ.Sr8jYkt-44xumhOv6Koibx7ryuRqTEIMOJ2EnO3lktc73fKySvwh6xrJGGdieClM-2Sbem43GLHriRAJJuuIpsvHEWNC9JmrOtLn_dwyqY6KR2cpaURBq5t7Y04367tndgEAAajUtQBWfUWu28AlVU473-137no3rVZSEstMEEgv1uZ3Qv4ow6u8zHgLzi8oUqJtEY0PDei_aK7QgM23V5CZ1lk09gjHLcFtwljNmpdfYuu7KXN5kQfByJSfILNKG1pr_KD1jLVJQdFOgjALGI03NW3YK_dbY9IRgjxMHutbJN2IZ9HV9iBl8UBBYVIdoWVhpl7vKm_ZLJ9T6qdRlw",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"abc3\",\n\t\"email\": \"ab3@gmail.com\",\n\t\"realmRoles\": [\n\t\t\"admin\"\n\t],\n\t\"credentials\": [{\n\t\t\"type\": \"password\",\n\t\t\"temporary\": true,\n\t\t\"value\": \"testpass\"\n\t}],\n\t\"enabled\": true\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
