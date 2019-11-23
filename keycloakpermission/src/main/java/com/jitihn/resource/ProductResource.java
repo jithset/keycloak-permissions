@@ -1,9 +1,11 @@
 package com.jitihn.resource;
 
 import javax.inject.Inject;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -28,5 +30,12 @@ public class ProductResource {
     public Response add(Product product) {
         productService.saveProduct(product);
         return Response.status(Status.CREATED).entity(true).build();
+    }
+
+    @DELETE
+    @Path("/{pid}")
+    public Response delete(@PathParam("pid") String pid) {
+        productService.deleteProduct(pid);
+        return Response.status(Status.OK).entity(true).build();
     }
 }

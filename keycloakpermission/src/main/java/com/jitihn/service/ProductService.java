@@ -28,4 +28,8 @@ public class ProductService {
     public void saveProduct(Product product) {
         productRepository.save(product);
     }
+
+    public void deleteProduct(String pid) {
+        productRepository.deleteByPid(pid);
+    }
 }

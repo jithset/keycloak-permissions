@@ -20,4 +20,9 @@ public class ProductRepository implements PanacheRepository<Product> {
         product.setPid(UUID.randomUUID().toString());
         product.persist();
     }
+
+    @Transactional
+    public void deleteByPid(String pid) {
+        delete("pid", pid);
+    }
 }
